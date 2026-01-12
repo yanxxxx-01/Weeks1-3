@@ -1,12 +1,10 @@
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class LinearInterpolation : MonoBehaviour
+public class Pulse : MonoBehaviour
 {
-    public Transform start;
-    public Transform end;
-    public float t;
     public AnimationCurve curve;
+    public float t;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,15 +14,13 @@ public class LinearInterpolation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        t += Time. deltaTime;
+        t += Time.deltaTime;
         if (t > 1f)
         {
             t = 0f;
         }
 
-       
         float y = curve.Evaluate(t);
-        transform.position = Vector2.Lerp(start.position, end.position, y);
         Vector3 newSize = Vector3.one * y;
         transform.localScale = Vector3.one * curve.Evaluate(t);
         newSize = transform.localScale;
