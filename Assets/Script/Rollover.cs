@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class Rollover : MonoBehaviour
 {
-    public rotateMe rotateMe;
+    public Pulse Pulse;
     public bool mouseIsOver = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
